@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+  background-color: #201b2c;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: #2f2841;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 30%;
+}
+
+.container h1, h2 {
+  color: #00ff88;
+}
+
+.container label {
+  color: #00ff88;
+}
+
+#players-container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group input {
+  outline: none;
+}
+
+#players-container input {
+  background-color: #514869;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  color: #f0ffff94;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #00ff88;
+  color: #2b134b;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #00ff8052;
+}
+
+#teams-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#teamBList, #teamAList {
+  list-style: none;
+  color: #f0ffff94;
+}
+
+#teamA, #teamB {
+  border: 2px solid #00ff88;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #2f2841;
+  margin: 10px;
+}
+
+#footer-copy {
+  display: flex;
+  justify-content: center;
+  background-color: #2f2841;
+  font-size: 0.9rem;
+  padding: 1.5rem;
+  font-weight: 100;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    height: auto;
+    width: 85%;
+  }
+
+  #players-container {
+    flex-direction: column;
+  }
+
+  #teams-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
