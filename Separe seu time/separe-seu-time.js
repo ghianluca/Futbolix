@@ -1,7 +1,6 @@
 let players = [];
 
 function addPlayer() {
-  console.log(players)
   const playerName = document.getElementById('playerName').value.trim();
   const playerSkill = document.getElementById('playerSkill').value.trim();
 
@@ -93,7 +92,6 @@ function notification (message, style) {
   element.textContent = message;
   element.classList.remove('success', 'error');
   element.classList.add(style);
-  console.log(element);
   setTimeout(() => {
     element.style.display = 'none';
   }, 3000);
