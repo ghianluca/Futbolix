@@ -8,25 +8,30 @@ function addPlayer() {
     players.push({ name: playerName, skill: parseInt(playerSkill, 10) });
     updatePlayersList();
     showClearButton();
+    notification('Jogador adicionado com sucesso!', 'success');
   } else {
-    alert('Por favor, insira um nome válido e uma habilidade entre 1 e 10.');
+    notification('Por favor, incira um nome válido e/ou una habilidade entre 0 e 10', 'error');
   }
 }
 
 function updatePlayersList() {
   const playersList = document.getElementById('playersList');
-  playersList.innerHTML = '';
 
-  players.forEach(player => {
-    const playerItem = document.createElement('li');
-    playerItem.textContent = `${player.name} (Habilidade: ${player.skill})`;
-    playersList.appendChild(playerItem);
-  });
+  if(playersList){
+    playersList.innerHTML = '';
+
+    players.forEach(player => {
+      const playerItem = document.createElement('li');
+      playerItem.textContent = `${player.name} (Habilidade: ${player.skill})`;
+      playersList.appendChild(playerItem);
+    });
+  }
 }
 
 function generateTeams() {
   if (players.length < 2) {
-    alert('Adicione pelo menos dois jogadores para separar os times.');
+
+    notification('Adicione pelo menos dois jogadores para separar os times.', 'error');
     return;
   }
 
@@ -82,4 +87,14 @@ function showClearButton() {
   }
 }
 
-window.onload = updatePlayersList;
+function notification (message, style) {
+  const element = document.getElementsByClassName('notification')[0];
+  element.style.display = 'block';
+  element.textContent = message;
+  element.classList.remove('success', 'error');
+  element.classList.add(style);
+  setTimeout(() => {
+    element.style.display = 'none';
+  }, 3000);
+
+}

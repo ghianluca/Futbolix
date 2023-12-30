@@ -99,6 +99,27 @@ button:hover {
   font-weight: 100;
 }
 
+.notification {
+  float: left;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 98%;
+  height: 30px;
+  color: #210e3a;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.notification.success {
+  color: #00ff88;
+}
+
+.notification.error {
+  color: #cb5b5b;
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     height: auto;
