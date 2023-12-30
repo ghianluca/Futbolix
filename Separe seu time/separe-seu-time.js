@@ -12,6 +12,9 @@ function addPlayer() {
   } else {
     notification('Por favor, incira um nome válido e/ou una habilidade entre 0 e 10', 'error');
   }
+
+  document.getElementById('playerName').value = '';
+  document.getElementById('playerSkill').value = '';
 }
 
 function updatePlayersList() {
